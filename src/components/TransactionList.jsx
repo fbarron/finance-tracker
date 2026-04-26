@@ -1,4 +1,4 @@
-function TransactionList({ transactions }) {
+function TransactionList({ transactions, onDelete }) {
   const formatCurrency = (amount) =>
     new Intl.NumberFormat("en-GB", {
       style: "currency",
@@ -22,6 +22,9 @@ function TransactionList({ transactions }) {
                 <span className={`transaction-amount ${amountClass}`}>
                   {formatCurrency(t.amount)}
                 </span>
+                <button className="delete-button" onClick={() => onDelete(t.id)}>
+                  Delete
+                </button>
               </li>
             );
           })}

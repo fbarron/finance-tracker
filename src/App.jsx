@@ -14,6 +14,10 @@ function App() {
     setTransactions([...transactions, transaction]);
   }
 
+  function deleteTransaction(id) {
+    setTransactions(transactions.filter((t) => t.id !== id));
+  }
+
   return (
     <div className="app-shell">
       <Header />
@@ -30,7 +34,7 @@ function App() {
           <TransactionForm onAdd={addTransaction} />
         </section>
         <section className="transaction-list-container">
-          <TransactionList transactions={transactions} />
+          <TransactionList transactions={transactions} onDelete={deleteTransaction} />
         </section>
       </main>
 

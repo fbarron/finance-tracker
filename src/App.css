@@ -160,6 +160,16 @@ main > section + section {
   cursor: pointer;
 }
 
+.delete-button {
+  background-color: var(--alert・ruby-resolution-50);
+  color: var(--text・creame-linen-source);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .transaction-form button:hover {
   filter: brightness(1.05);
 }
