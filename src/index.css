@@ -1,111 +1,46 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-body {
-  margin: 0;
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  /* Alert・Muted Garnet */
+  --alert・ruby-resolution-10: rgb(255 230 229);
+  --alert・ruby-resolution-20: rgb(244 199 196);
+  --alert・ruby-resolution-30: rgb(227 145 141);
+  --alert・ruby-resolution-40: rgb(186 82 78);
+  --alert・ruby-resolution-50: rgb(134 43 41);
+  --alert・ruby-resolution-60: rgb(82 20 20);
+  --alert・ruby-resolution-source: rgb(160 60 58);
+  
+  /* Primary・Corporate Evergreen */
+  --primary・deep-green-authority-10: rgb(231 238 233);
+  --primary・deep-green-authority-20: rgb(196 211 201);
+  --primary・deep-green-authority-30: rgb(143 169 152);
+  --primary・deep-green-authority-40: rgb(93 127 109);
+  --primary・deep-green-authority-50: rgb(48 82 65);
+  --primary・deep-green-authority-60: rgb(26 48 38);
+  --primary・deep-green-authority-source: rgb(35 70 54);
+  
+  /* Success・Conservative Emerald */
+  --success・emerald-assurance-10: rgb(223 244 228);
+  --success・emerald-assurance-20: rgb(181 222 192);
+  --success・emerald-assurance-30: rgb(132 191 150);
+  --success・emerald-assurance-40: rgb(79 149 107);
+  --success・emerald-assurance-50: rgb(43 101 70);
+  --success・emerald-assurance-60: rgb(22 58 40);
+  --success・emerald-assurance-source: rgb(53 122 86);
+  
+  /* Text・Cream Linen */
+  --text・creame-linen-10: rgb(40 44 48);
+  --text・creame-linen-20: rgb(69 74 79);
+  --text・creame-linen-30: rgb(103 109 116);
+  --text・creame-linen-40: rgb(142 149 157);
+  --text・creame-linen-50: rgb(208 196 173);
+  --text・creame-linen-60: rgb(246 238 223);
+  --text・creame-linen-source: rgb(251 246 236);
+  
+  /* Warning・Muted Gold */
+  --warning・amber-advisory-10: rgb(248 238 213);
+  --warning・amber-advisory-20: rgb(232 211 162);
+  --warning・amber-advisory-30: rgb(203 171 103);
+  --warning・amber-advisory-40: rgb(160 126 63);
+  --warning・amber-advisory-50: rgb(110 82 34);
+  --warning・amber-advisory-60: rgb(67 47 16);
+  --warning・amber-advisory-source: rgb(184 145 67);
 }

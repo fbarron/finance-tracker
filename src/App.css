@@ -1,16 +1,222 @@
-/* Header Nav Bar Styling */
-.nav-links{
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
-  background-color: aqua;
+body {
+  margin: 0;
+  background-color: var(--text・creame-linen-60);
+  color: var(--text・creame-linen-10);
+  font-family: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
 }
 
+#root {
+  min-height: 100vh;
+}
 
-/* Footer Styling */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    180deg,
+    var(--text・creame-linen-source) 0%,
+    var(--text・creame-linen-60) 65%,
+    var(--primary・deep-green-authority-10) 100%
+  );
+}
+
+.app-header {
+  background-color: var(--primary・deep-green-authority-60);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary・deep-green-authority-60) 82%, white 18%);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0.95rem 1rem;
+}
+
+.brand {
+  margin-right: auto;
+  color: var(--text・creame-linen-source);
+  font-size: 0.96rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.nav-links li a,
+.nav-links li a:visited {
+  color: var(--text・creame-linen-60);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+main {
+  width: min(1040px, calc(100% - 2rem));
+  margin: 2rem auto 2.5rem;
+  background-color: var(--text・creame-linen-source);
+  border: 1px solid var(--primary・deep-green-authority-20);
+  border-radius: 6px;
+}
+
+main > section {
+  padding: 1.4rem 1.5rem;
+}
+
+main > section + section {
+  border-top: 1px solid var(--primary・deep-green-authority-20);
+}
+
+.welcome h1 {
+  margin: 0;
+  color: var(--primary・deep-green-authority-60);
+  font-size: clamp(1.6rem, 2.3vw, 2.15rem);
+  font-weight: 700;
+}
+
+.welcome p {
+  margin: 0.5rem 0 0;
+  color: var(--text・creame-linen-20);
+  max-width: 62ch;
+}
+
+.balance-card h2,
+.transaction-list h2 {
+  margin: 0;
+  color: var(--text・creame-linen-20);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.balance-amount {
+  margin: 0.65rem 0 0;
+  color: var(--primary・deep-green-authority-60);
+  font-size: clamp(1.45rem, 2.7vw, 2rem);
+  font-weight: 700;
+}
+
+.amount-positive {
+  color: var(--success・emerald-assurance-50);
+}
+
+.amount-negative {
+  color: var(--alert・ruby-resolution-50);
+}
+
+.transaction-form {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 520px;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field label {
+  color: var(--text・creame-linen-20);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.field input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--primary・deep-green-authority-20);
+  border-radius: 4px;
+  padding: 0.68rem 0.72rem;
+  background-color: white;
+  color: var(--text・creame-linen-10);
+  outline: none;
+  transition: border-color 120ms ease;
+}
+
+.field input::placeholder {
+  color: var(--text・creame-linen-40);
+}
+
+.field input:focus {
+  border-color: var(--primary・deep-green-authority-40);
+}
+
+.transaction-form button {
+  justify-self: start;
+  border: none;
+  border-radius: 4px;
+  padding: 0.65rem 1rem;
+  background-color: var(--primary・deep-green-authority-50);
+  color: var(--text・creame-linen-source);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.transaction-form button:hover {
+  filter: brightness(1.05);
+}
+
+.transaction-list ul {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+}
+
+.transaction-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--primary・deep-green-authority-10);
+}
+
+.transaction-title {
+  color: var(--text・creame-linen-10);
+  font-weight: 600;
+}
+
+.transaction-amount {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.empty-state {
+  margin-top: 0.8rem;
+  color: var(--text・creame-linen-30);
+}
+
 .footer {
-  background-color: #f1f1f1;
-  padding: 20px;
-  text-align: center;
   margin-top: auto;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--primary・deep-green-authority-60);
+  border-top: 1px solid color-mix(in srgb, var(--primary・deep-green-authority-60) 82%, white 18%);
+  color: var(--text・creame-linen-60);
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .nav-links {
+    padding: 0.85rem 0.7rem;
+  }
+
+  main {
+    width: min(1040px, calc(100% - 1rem));
+    margin: 1rem auto 1.5rem;
+  }
+
+  main > section {
+    padding: 1rem;
+  }
 }

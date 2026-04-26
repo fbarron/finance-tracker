@@ -1,10 +1,9 @@
 export default function Header() {
   return (
-    <header>
+    <header className="app-header">
       <ul className="nav-links">
+        <li className="brand">Finance Tracker</li>
         <li><a href="/">Home</a></li>
-        <li><a href="/transactions">Transactions</a></li>
-        <li><a href="/budget">Budget</a></li>
       </ul>
     </header>
   );

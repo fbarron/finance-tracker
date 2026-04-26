@@ -1,22 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import { useState } from "react";
+import "./App.css";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Balance from "./components/Balance";
+import TransactionForm from "./components/TransactionForm";
+import TransactionList from "./components/TransactionList";
 
 function App() {
+  const [transactions, setTransactions] = useState([]);
+
+  function addTransaction(transaction) {
+    setTransactions([...transactions, transaction]);
+  }
 
   return (
-    <div>
+    <div className="app-shell">
       <Header />
+
       <main>
-        <h1>Hello</h1>
+        <section className="welcome">
+          <h1>Welcome to Finance Tracker</h1>
+          <p>Track your income and expenses with ease.</p>
+        </section>
+        <section className="balance-container">
+          <Balance transactions={transactions} />
+        </section>
+        <section className="transaction-form-container">
+          <TransactionForm onAdd={addTransaction} />
+        </section>
+        <section className="transaction-list-container">
+          <TransactionList transactions={transactions} />
+        </section>
       </main>
+
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
