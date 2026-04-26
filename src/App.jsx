@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 import Header from "./components/Header";
@@ -7,8 +7,18 @@ import Balance from "./components/Balance";
 import TransactionForm from "./components/TransactionForm";
 import TransactionList from "./components/TransactionList";
 
+const STORAGE_KEY = "transactions";
+
 function App() {
-  const [transactions, setTransactions] = useState([]);
+  const [transactions, setTransactions] = useState(() => {
+    try {
+      const storedTransactions = localStorage.getItem(STORAGE_KEY);
+      return storedTransactions ? JSON.parse(storedTransactions) : [];
+    } catch (error) {
+      console.error("Error loading transactions from localStorage:", error);
+      return [];
+    }
+  });
 
   function addTransaction(transaction) {
     setTransactions([...transactions, transaction]);
@@ -17,6 +27,17 @@ function App() {
   function deleteTransaction(id) {
     setTransactions(transactions.filter((t) => t.id !== id));
   }
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(transactions));
+  }, [transactions]);
+
+  useEffect(() => {
+    const storedTransactions = localStorage.getItem(STORAGE_KEY);
+    if (storedTransactions) {
+      setTransactions(JSON.parse(storedTransactions));
+    }
+  }, []);
 
   return (
     <div className="app-shell">
