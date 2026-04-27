@@ -5,6 +5,17 @@ function TransactionList({ transactions, onDelete }) {
       currency: "GBP",
     }).format(amount);
 
+  const categoryLabels = {
+    food: "Food",
+    transport: "Transport",
+    communication: "Communication",
+    entertainment: "Entertainment",
+    health: "Health",
+    education: "Education",
+    utilities: "Utilities",
+    other: "Other",
+  };
+
   return (
     <div className="transaction-list">
       <h2>Transactions</h2>
@@ -19,6 +30,9 @@ function TransactionList({ transactions, onDelete }) {
             return (
               <li key={t.id}>
                 <span className="transaction-title">{t.title}</span>
+                <span className="transaction-category">
+                  {categoryLabels[t.category] || t.category}
+                </span>
                 <span className={`transaction-amount ${amountClass}`}>
                   {formatCurrency(t.amount)}
                 </span>

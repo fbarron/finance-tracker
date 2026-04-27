@@ -129,7 +129,11 @@ main > section + section {
   font-weight: 600;
 }
 
-.field input {
+.form-control,
+.field input,
+.field select,
+.transaction-filter select,
+.transaction-category select {
   width: 100%;
   box-sizing: border-box;
   border: 1px solid var(--primary・deep-green-authority-20);
@@ -138,13 +142,24 @@ main > section + section {
   background-color: white;
   color: var(--text・creame-linen-10);
   outline: none;
-  transition: border-color 120ms ease;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
 }
 
+
+.form-control:focus,
+.field select:focus,
+.transaction-filter select:focus,
+.transaction-category select:focus {
+  border-color: var(--primary・deep-green-authority-40);
+  box-shadow: 0 0 0 3px rgb(93 127 109 / 14%);
+}
+
+.form-control::placeholder,
 .field input::placeholder {
   color: var(--text・creame-linen-40);
 }
 
+.form-control:focus,
 .field input:focus {
   border-color: var(--primary・deep-green-authority-40);
 }
@@ -201,6 +216,34 @@ main > section + section {
 .empty-state {
   margin-top: 0.8rem;
   color: var(--text・creame-linen-30);
+}
+
+.transaction-filter {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.transaction-filter label {
+  color: var(--text・creame-linen-20);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.transaction-filter select {
+  width: 100%;
+  max-width: 320px;
+  padding: 0.68rem 0.72rem;
+  border: 1px solid var(--primary・deep-green-authority-20);
+  border-radius: 4px;
+  background: white;
+}
+
+.transaction-category{
+  display: grid;
+  gap: 0.35rem;
+  color: var(--text・creame-linen-30);
+  font-size: 0.9rem;
 }
 
 .footer {

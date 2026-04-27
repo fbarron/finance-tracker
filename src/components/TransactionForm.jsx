@@ -3,20 +3,22 @@ import { useState } from "react";
 function TransactionForm({ onAdd }) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
-
+  const [category, setCategory] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!title || !amount) return;
+    if (!title || !amount || !category) return;
 
     onAdd({
       id: Date.now(),
       title,
       amount: Number(amount),
+      category,
     });
 
     setTitle("");
     setAmount("");
+    setCategory("");
   }
 
   return (
@@ -24,6 +26,7 @@ function TransactionForm({ onAdd }) {
       <div className="field">
         <label htmlFor="transaction-title">Transaction Title</label>
         <input
+          className="form-control"
           id="transaction-title"
           placeholder="e.g. Salary, Rent, Groceries"
           value={title}
@@ -32,8 +35,29 @@ function TransactionForm({ onAdd }) {
       </div>
 
       <div className="field">
+        <label htmlFor="transaction-category">Category</label>
+        <select
+          className="form-control"
+          id="transaction-category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="">Select a category</option>
+          <option value="food">Food</option>
+          <option value="transport">Transport</option>
+          <option value="communication">Communication</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="health">Health</option>
+          <option value="education">Education</option>
+          <option value="utilities">Utilities</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div className="field">
         <label htmlFor="transaction-amount">Amount</label>
         <input
+          className="form-control"
           id="transaction-amount"
           type="number"
           step="0.01"
