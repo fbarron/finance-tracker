@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function TransactionForm({ onAdd }) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
+  const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));
   const [category, setCategory] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
@@ -10,10 +12,11 @@ function TransactionForm({ onAdd }) {
     if (!title || !amount || !category) return;
 
     onAdd({
-      id: Date.now(),
+      id: uuidv4(),
       title,
       amount: Number(amount),
       category,
+      date: new Date(date).toISOString(),
     });
 
     setTitle("");
@@ -64,6 +67,16 @@ function TransactionForm({ onAdd }) {
           placeholder="Use negative values for expenses"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
+        />
+      </div>
+      <div className="field">
+        <label htmlFor="transaction-date">Date</label>
+        <input
+          className="form-control"
+          id="transaction-date"
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
         />
       </div>
 

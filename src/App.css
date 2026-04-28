@@ -208,6 +208,12 @@ main > section + section {
   font-weight: 600;
 }
 
+.transaction-date {
+  color: var(--text・creame-linen-30);
+  font-size: 0.9rem;
+  margin-right: 0.6rem;
+}
+
 .transaction-amount {
   font-variant-numeric: tabular-nums;
   font-weight: 700;
@@ -242,8 +248,15 @@ main > section + section {
 .transaction-category{
   display: grid;
   gap: 0.35rem;
-  color: var(--text・creame-linen-30);
+  color: var(--text・creame-linen-10);
   font-size: 0.9rem;
+  font-weight: 600  ;
+}
+
+.transaction-date{
+  color: var(--text・creame-linen-10);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .footer {

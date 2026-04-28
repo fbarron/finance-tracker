@@ -28,18 +28,19 @@ function TransactionList({ transactions, onDelete }) {
             const amountClass = t.amount >= 0 ? "amount-positive" : "amount-negative";
 
             return (
-              <li key={t.id}>
-                <span className="transaction-title">{t.title}</span>
-                <span className="transaction-category">
-                  {categoryLabels[t.category] || t.category}
-                </span>
-                <span className={`transaction-amount ${amountClass}`}>
-                  {formatCurrency(t.amount)}
-                </span>
-                <button className="delete-button" onClick={() => onDelete(t.id)}>
-                  Delete
-                </button>
-              </li>
+                <li key={t.id}>
+                  <span className="transaction-date">{new Date(t.date).toLocaleDateString()}</span>
+                  <span className="transaction-title">{t.title}</span>
+                  <span className="transaction-category">
+                    {categoryLabels[t.category] || t.category}
+                  </span>
+                  <span className={`transaction-amount ${amountClass}`}>
+                    {formatCurrency(t.amount)}
+                  </span>
+                  <button className="delete-button" onClick={() => onDelete(t.id)}>
+                    Delete
+                  </button>
+                </li>
             );
           })}
         </ul>
